@@ -26,6 +26,7 @@ if ($warning !== '') {
 			<label>Email: <input type = "email" name="email" value="" size="40" maxlength="40" required="required"/></label><br /><br />
             
 			<h3>Login Information</h3><br>
+			<label>Username: <input type = "text" name="username" value="" size="30" maxlength="30" required="required"/></label><br /><br />
 			<label>Password:<input type = "password" name="passwrd1" required="required"/></label><br />
 			<label>Re-enter password:<input type = "password" name="passwrd2" required="required"/></label><br /><br />
 			<input type = "reset" value="Reset Form" /> 

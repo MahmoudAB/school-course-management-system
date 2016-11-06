@@ -16,6 +16,10 @@ if ($_POST['email'] === "") {
     $warning .= 'Empty field for "Email address"\n';
 }
 
+if ($_POST['username'] === "") {
+    $warning .= 'Empty field for "username"\n';
+}
+
 if ($_POST['passwrd1'] === "") {
     $warning .= 'Empty field for "Choose password"\n';
 }
@@ -30,23 +34,27 @@ if ($warning !== "") {
     return;
 } else {
     
-$mysqli = new mysqli("localhost", "root", "root", "database_initial");
+        $mysqli = new mysqli("localhost", "cl26-username", "username", "cl26-username");
     
     if(mysqli_connect_error()){
 
         echo"Cannot connect to the database";
     }
 
-$query = "SELECT * FROM `users` WHERE `password` = '".$pass."' AND `username` = '".$username."'";
+
+
+$query = "INSERT INTO `cl26-username`.`users` (`name`, `lastname`, `email`, `phone`, `password`, `id`, `username`) VALUES ('".$_POST['fname']."', 
+    '".$_POST['lname']."', '".$_POST['email']."', '".$_POST['phone']."', '".$_POST['passwrd1']."', '1', '".$_POST['username']."')";
+
+
 $result = $mysqli->query($query);
 
-if ($conn->query($query) === TRUE) {
-    echo "New record created successfully";
+
     header('Location: index.php');
-} else {
+
     echo "Error: " . $sql . "<br>" . $conn->error;
-}
-die();
+
+//die();
 /* close connection */
 $mysqli->close();
     

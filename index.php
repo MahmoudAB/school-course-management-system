@@ -19,7 +19,7 @@ else {
     if(isset($_POST['pass'])){
         $pass= $_POST['pass'];
     }
-		$mysqli = new mysqli("localhost", "root", "root", "database_initial");
+		$mysqli = new mysqli("localhost", "cl26-username", "username", "cl26-username");
     
 	if(mysqli_connect_error()){
 
@@ -63,13 +63,13 @@ $mysqli->close();
   <input type="password" name="pass" id="pass" value="" /><br><br>
   <br><br>
  <input type="submit" value="Login" name="submit" id="submit" />
-
+</form>
  <a href="register.php">
    <button>Register</button>
 </a>
   
 
-</form>
+
 
 
 </body>
