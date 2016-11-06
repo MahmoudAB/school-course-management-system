@@ -34,8 +34,11 @@ $query = "SELECT * FROM `users` WHERE `password` = '".$pass."' AND `username` = 
 $result = $mysqli->query($query);
 if ($result->num_rows > 0) {
    
+   if ($_POST['user'] == 'magister' & $_POST['pass'] == 'signum'){
+    header('Location: admin_welcome.php');
+   }else {
    header('Location: welcome.php'); // redirect to requested page and logged in
-
+}
     
 } else {
   echo "failed to login";
